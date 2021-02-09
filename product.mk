@@ -25,6 +25,11 @@ PRODUCT_PACKAGES += \
     Extra_CaptivePortalUrlOverlay \
     Extra_NTPOverlay
 
+ifneq ($(EXTRA_DEVICE_BRACKET),low-end)
+PRODUCT_PACKAGES += \
+    Extra_SQLiteModeOverlay
+endif
+
 # Inherits
 $(call inherit-product-if-exists, ih8sn/ih8sn.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/ringtones/ringtones-vendor.mk)
