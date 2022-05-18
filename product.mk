@@ -22,6 +22,7 @@ PRODUCT_COPY_FILES += \
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 PRODUCT_PACKAGES += \
+    Extra_BromiteWebViewOverlay \
     Extra_NTPOverlay
 
 ifeq ($(EXTRA_DEVICE_BRACKET),low-end)
