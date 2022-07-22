@@ -10,7 +10,7 @@ $(INSTALLED_SUPERIMAGE_EMPTY_RAW_TARGET): $(LPFLASH) $(PRODUCT_OUT)/super_empty.
 	$(call pretty,"Target empty super fs raw image: $@")
 	$(hide) touch $@
 	$(hide) echo $(CURDIR)
-	$(hide) $(LPFLASH) $@ $(PRODUCT_OUT)/super_empty.img
+	$(hide) $(LPFLASH) $$(realpath $@) $(PRODUCT_OUT)/super_empty.img
 
 .PHONY: superimage_empty_raw
 superimage_empty_raw: $(INSTALLED_SUPERIMAGE_EMPTY_RAW_TARGET)
