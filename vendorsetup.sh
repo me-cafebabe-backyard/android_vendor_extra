@@ -14,6 +14,9 @@
 # For now, just skip the ABI checks to fix build errors.
 export SKIP_ABI_CHECKS=true
 
+# Build ID
+export TARGET_UNOFFICIAL_BUILD_ID=0xCAFEBABE
+
 export MITHORIUM_REPOS="$(echo {device,vendor}/xiaomi/{mithorium-common,Mi439,Mi8937,Tiare,oxygen,uter,vince} device/xiaomi/{mi8937,land}-camera vendor/xiaomi/Mi8937-2)"
 export MIKONA_REPOS="$(echo hardware/xiaomi {device,vendor}/xiaomi/{sm8250-common,umi})"
 

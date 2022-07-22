@@ -14,9 +14,6 @@ endif
 PRODUCT_PACKAGES += \
     NotePad
 
-# Build ID
-TARGET_UNOFFICIAL_BUILD_ID := 0xCAFEBABE
-
 # Freeform Multiwindow
 ifneq ($(EXTRA_DEVICE_BRACKET),low-end)
 PRODUCT_COPY_FILES += \
