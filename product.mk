@@ -5,6 +5,11 @@ ifeq ($(EXTRA_DEVICE_BRACKET),)
 $(error EXTRA_DEVICE_BRACKET is undefined)
 endif
 
+# Android Go
+ifeq ($(EXTRA_DEVICE_BRACKET),low-end)
+include $(LOCAL_PATH)/product/go.mk
+endif
+
 # APPs - AOSP
 PRODUCT_PACKAGES += \
     NotePad

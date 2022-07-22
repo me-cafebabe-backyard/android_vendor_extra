@@ -18,8 +18,8 @@
 
 
 # Set lowram options and enable traced by default
-PRODUCT_VENDOR_PROPERTIES += \
-     ro.config.low_ram=true \
+#PRODUCT_VENDOR_PROPERTIES += \
+#     ro.config.low_ram=true \
 
 # Speed profile services and wifi-service to reduce RAM and storage.
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
@@ -30,8 +30,8 @@ PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 
 # Use a profile based boot image for this device. Note that this is currently a
 # generic profile and not Android Go optimized.
-PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
-PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
+#PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+#PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
 
 # Do not generate libartd.
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
@@ -53,12 +53,12 @@ ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 endif
 
 # Add the system properties.
-TARGET_SYSTEM_PROP += \
-    build/make/target/board/go_defaults_common.prop
+#TARGET_SYSTEM_PROP += \
+#    build/make/target/board/go_defaults_common.prop
 
 # use the go specific handheld_core_hardware.xml from frameworks
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/go_handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+#PRODUCT_COPY_FILES += \
+#    frameworks/native/data/etc/go_handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 # Dedupe VNDK libraries with identical core variants.
-TARGET_VNDK_USE_CORE_VARIANT := true
+#TARGET_VNDK_USE_CORE_VARIANT := true
