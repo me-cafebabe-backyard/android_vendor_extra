@@ -8,6 +8,11 @@ TARGET_PRODUCT_PROP += \
     $(EXTRA_PATH)/props/common/product.prop \
     $(EXTRA_PATH)/props/$(EXTRA_DEVICE_BRACKET)/product.prop
 
+ifeq ($(EXTRA_DEVICE_BRACKET),low-end)
+TARGET_SYSTEM_EXT_PROP += \
+    $(EXTRA_PATH)/props/go.prop
+endif
+
 # SEPolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(EXTRA_PATH)/sepolicy/private
 
