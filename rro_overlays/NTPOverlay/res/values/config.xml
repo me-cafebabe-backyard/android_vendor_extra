@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Remote server that can provide NTP responses. -->
+    <string translatable="false" name="config_ntpServer">time.apple.com</string>
+</resources>
