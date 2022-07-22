@@ -27,11 +27,14 @@ endif
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 PRODUCT_PACKAGES += \
-    Extra_CaptivePortalUrlOverlay \
     Extra_NTPOverlay
 
-ifneq ($(EXTRA_DEVICE_BRACKET),low-end)
+ifeq ($(EXTRA_DEVICE_BRACKET),low-end)
 PRODUCT_PACKAGES += \
+    Extra_InProcessCaptivePortalUrlOverlay
+else
+PRODUCT_PACKAGES += \
+    Extra_CaptivePortalUrlOverlay \
     Extra_SQLiteModeOverlay
 endif
 
