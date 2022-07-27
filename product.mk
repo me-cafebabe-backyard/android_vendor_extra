@@ -15,10 +15,8 @@ PRODUCT_PACKAGES += \
     NotePad
 
 # Freeform Multiwindow
-ifneq ($(EXTRA_DEVICE_BRACKET),low-end)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
-endif
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
