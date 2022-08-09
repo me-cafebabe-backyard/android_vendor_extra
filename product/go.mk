@@ -36,11 +36,13 @@ PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 # Do not generate libartd.
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
+ifeq ($(call math_lt,$(PLATFORM_SDK_VERSION),33),true)
 # Do not spin up a separate process for the network stack on go devices, use an in-process APK.
 PRODUCT_PACKAGES += InProcessNetworkStack
 PRODUCT_PACKAGES += CellBroadcastAppPlatform
 PRODUCT_PACKAGES += CellBroadcastServiceModulePlatform
 PRODUCT_PACKAGES += com.android.tethering.inprocess
+endif
 
 # Strip the local variable table and the local variable type table to reduce
 # the size of the system image. This has no bearing on stack traces, but will
