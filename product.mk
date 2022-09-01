@@ -34,7 +34,9 @@ PRODUCT_PACKAGES += \
 endif
 
 # Inherits
+ifneq ($(PRODUCT_EXCLUDE_IH8SN),true)
 $(call inherit-product-if-exists, ih8sn/ih8sn.mk)
+endif
 $(call inherit-product-if-exists, vendor/xiaomi/ringtones/ringtones-vendor.mk)
 
 # Inherit private extra if exists
