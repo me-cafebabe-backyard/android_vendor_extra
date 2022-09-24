@@ -17,7 +17,7 @@ export SKIP_ABI_CHECKS=true
 # Build ID
 export TARGET_UNOFFICIAL_BUILD_ID=0xCAFEBABE
 
-export MITHORIUM_REPOS="$(echo {device,vendor}/xiaomi/{mithorium-common,Mi439,Mi8937,Tiare,oxygen,uter,vince} device/xiaomi/{mi8937,land}-camera vendor/xiaomi/Mi8937-2)"
+export MITHORIUM_REPOS="$(echo {device,vendor}/xiaomi/{mithorium-common,Mi439,Mi8937,Tiare,oxygen,uter,vince,Mi439_4_19} device/xiaomi/{mi8937,land}-camera vendor/xiaomi/{mithorium-common-4.19,Mi8937-2} hardware/mithorium-{4.9,4.19})"
 export MIKONA_REPOS="$(echo hardware/xiaomi {device,vendor}/xiaomi/{sm8250-common,umi})"
 
 dt_repos_show_git_remote_add_commands() {
