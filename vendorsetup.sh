@@ -36,7 +36,7 @@ dt_repos_show_git_remote_add_commands() {
 dt_repos_reset() {
     [ "$*" ] || (echo "Please specify repos!"; return 1)
     for r in $@; do
-        cd $r || (echo "! Error: Failed to enter $r" ; continue)
+        cd $r || continue
         echo "##################################################"
         echo "Repo: $r"
         echo
@@ -54,7 +54,7 @@ dt_repos_status() {
     CLEAN=""
     DIRTY=""
     for r in $@; do
-        cd $r || (echo "! Error: Failed to enter $r" ; continue)
+        cd $r || continue
         MSG="$(LANG=C git status)"
         BRANCH="$(echo \"$MSG\"|grep 'On branch'|cut -d ' ' -f 3)"
         if echo "$MSG" | grep 'working tree clean' > /dev/null; then
