@@ -26,13 +26,18 @@ PRODUCT_PACKAGES += \
     Extra_NTPOverlay
 
 ifeq ($(EXTRA_DEVICE_BRACKET),low-end)
+ifeq ($(call math_lt,$(PLATFORM_SDK_VERSION),33),true)
 PRODUCT_PACKAGES += \
     Extra_InProcessCaptivePortalUrlOverlay
 else
 PRODUCT_PACKAGES += \
+    Extra_CaptivePortalUrlOverlay
+endif
+else # EXTRA_DEVICE_BRACKET
+PRODUCT_PACKAGES += \
     Extra_CaptivePortalUrlOverlay \
     Extra_SQLiteModeOverlay
-endif
+endif # EXTRA_DEVICE_BRACKET
 
 # Inherits
 ifneq ($(PRODUCT_EXCLUDE_IH8SN),true)
