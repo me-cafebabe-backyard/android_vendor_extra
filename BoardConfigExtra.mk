@@ -14,7 +14,11 @@ TARGET_SYSTEM_EXT_PROP += \
 endif
 
 # SEPolicy
+ifeq ($(call math_gt,$(PLATFORM_SDK_VERSION),30),true)
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(EXTRA_PATH)/sepolicy/private
+else
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(EXTRA_PATH)/sepolicy/private
+endif
 
 # Inherit private extra if exists
 -include vendor/extra-priv/BoardConfigExtraPriv.mk
