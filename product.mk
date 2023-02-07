@@ -11,12 +11,16 @@ include $(LOCAL_PATH)/product/go.mk
 endif
 
 # APPs - AOSP
+ifneq ($(EXTRA_LITE),true)
 PRODUCT_PACKAGES += \
     NotePad
+endif
 
 # Freeform Multiwindow
+ifneq ($(EXTRA_LITE),true)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
+endif
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -25,8 +29,10 @@ PRODUCT_PACKAGES += \
     Extra_NTPOverlay
 
 ifneq ($(EXTRA_IS_32BIT),true)
+ifneq ($(EXTRA_LITE),true)
 PRODUCT_PACKAGES += \
     Extra_BromiteWebViewOverlay
+endif
 endif
 
 ifeq ($(EXTRA_DEVICE_BRACKET),low-end)
@@ -44,10 +50,12 @@ PRODUCT_PACKAGES += \
 endif # EXTRA_DEVICE_BRACKET
 
 # Inherits
+ifneq ($(EXTRA_LITE),true)
 ifneq ($(PRODUCT_EXCLUDE_IH8SN),true)
 $(call inherit-product-if-exists, ih8sn/ih8sn.mk)
 endif
 $(call inherit-product-if-exists, vendor/xiaomi/ringtones/ringtones-vendor.mk)
+endif
 
 # Inherit private extra if exists
 $(call inherit-product-if-exists, vendor/extra-priv/extra-priv.mk)
