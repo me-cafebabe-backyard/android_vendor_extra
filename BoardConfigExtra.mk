@@ -14,6 +14,7 @@ TARGET_SYSTEM_EXT_PROP += \
 endif
 
 # SEPolicy
+BOARD_VENDOR_SEPOLICY_DIRS += $(EXTRA_PATH)/sepolicy/vendor
 ifeq ($(call math_gt,$(PLATFORM_SDK_VERSION),30),true)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(EXTRA_PATH)/sepolicy/private
 else

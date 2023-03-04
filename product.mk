@@ -22,6 +22,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
 endif
 
+# FM Radio
+ifneq ($(EXTRA_LITE),true)
+PRODUCT_PACKAGES += \
+    libqcomfmjni \
+    RevampedFMRadio
+endif
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
