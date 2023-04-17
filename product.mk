@@ -35,13 +35,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_PACKAGES += \
     Extra_NTPOverlay
 
-ifneq ($(EXTRA_IS_32BIT),true)
-ifneq ($(EXTRA_LITE),true)
-PRODUCT_PACKAGES += \
-    Extra_BromiteWebViewOverlay
-endif
-endif
-
 ifeq ($(EXTRA_DEVICE_BRACKET),low-end)
 ifeq ($(call math_lt,$(PLATFORM_SDK_VERSION),33),true)
 PRODUCT_PACKAGES += \
