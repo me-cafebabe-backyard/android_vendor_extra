@@ -23,10 +23,12 @@ PRODUCT_COPY_FILES += \
 endif
 
 # FM Radio
+ifeq ($(call math_gt,$(PLATFORM_SDK_VERSION),30),true)
 ifneq ($(EXTRA_LITE),true)
 PRODUCT_PACKAGES += \
     libqcomfmjni \
     RevampedFMRadio
+endif
 endif
 
 # Overlays
