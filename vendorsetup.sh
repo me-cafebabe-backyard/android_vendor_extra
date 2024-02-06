@@ -17,10 +17,11 @@ export SKIP_ABI_CHECKS=true
 # Build ID
 export TARGET_UNOFFICIAL_BUILD_ID=0xCAFEBABE
 
-export MITHORIUM_REPOS="$(echo {device,vendor}/xiaomi/{mithorium-common,Mi439,Mi8937,Tiare,oxygen,uter,vince,Mi439_4_19} device/xiaomi/{mi8937,land}-camera vendor/xiaomi/{mithorium-common-4.19,Mi8937-2} hardware/mithorium-{4.9,4.19})"
-export MIKONA_REPOS="$(echo hardware/xiaomi {device,vendor}/xiaomi/{sm8250-common,umi})"
+# Device Repos
+export MITHORIUM_REPOS="$(echo {device,vendor}/xiaomi/{mithorium-common,Mi439,Mi8937,Tiare} device/xiaomi/{mi8937,land}-camera vendor/xiaomi/mithorium-common-4.19 hardware/mithorium/common)"
+export MISC_DEVICE_REPOS="$(echo hardware/xiaomi {device,vendor}/xiaomi/{sm8250-common,umi} {device,vendor}/xiaomi/{sdm710-common,vela} {device,vendor}/xiaomi/sdm660-common {device,vendor}/qualcomm/sdm455)"
 
-dt_repos_show_git_remote_add_commands() {
+device_repos_show_git_remote_add_commands() {
     [ "$#" -ge 2 ] || (echo "Please specify remote name and repos!"; return 1)
     local REMOTE=$1
     shift
@@ -33,7 +34,7 @@ dt_repos_show_git_remote_add_commands() {
     done
 }
 
-dt_repos_reset() {
+device_repos_reset() {
     [ "$*" ] || (echo "Please specify repos!"; return 1)
     for r in $@; do
         cd $r || continue
@@ -48,7 +49,7 @@ dt_repos_reset() {
     done
 }
 
-dt_repos_status() {
+device_repos_status() {
     [ "$*" ] || (echo "Please specify repos!"; return 1)
     local MSG BRANCH CLEAN DIRTY
     CLEAN=""
